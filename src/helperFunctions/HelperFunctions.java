@@ -1,7 +1,6 @@
 package helperFunctions;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,5 +23,17 @@ public class HelperFunctions {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public StringBuilder getCharacterStringFromFile(File file) {
+        StringBuilder inputString = null;
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            inputString = new StringBuilder(reader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return inputString;
     }
 }
