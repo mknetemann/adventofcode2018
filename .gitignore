@@ -1,0 +1,9 @@
+# IDE #
+.idea
+*.iml
+
+# OS #
+.DS_Store
+
+# COMPILED #
+*.class
