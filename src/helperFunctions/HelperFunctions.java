@@ -36,4 +36,20 @@ public class HelperFunctions {
         }
         return inputString;
     }
+
+    public List<String> getStringArrayFromFile(File file) {
+        List<String> boxIDs = new ArrayList<>();
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line = reader.readLine();
+            while (line != null) {
+                boxIDs.add(line);
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return boxIDs;
+    }
 }
